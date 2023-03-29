@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator Project</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="calc.css">
+  </head>
+
+  <body>
+    <div id="calculator"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CALCULATOR
+    <div id="screen">
+      <p id="display"></p>
+    </div>
+ 
+    <div class="cal-buttons">
+        <ul id ="buttons">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>C</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>+</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>-</li>
+            <li>0</li>
+            <li>*</li>
+            <li>.</li>
+            <li>/</li>
+            <li id="equals">=</li>
+            </ul>
+        
+
+    </div>
+    
+
+    <script>
+        var buttons = document.getElementById('buttons');
+        var li = buttons.querySelectorAll("li");
+  var result=document.getElementById("display");
+ for(let i=0;i<li.length;i++){
+    li[i].addEventListener("click",function(){
+        
+        if(this.innerHTML=="="){
+            
+           result.innerHTML= eval(result.innerHTML)
+        }
+        else if(this.innerHTML=="C"){
+            result.innerHTML="";
+        }
+        else{
+            
+            result.innerHTML+=this.innerHTML;
+        }
+    });
+ }
+    </script>
+  </body>
+</html>
